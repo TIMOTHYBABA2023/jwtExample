@@ -2,7 +2,6 @@ package com.timtrixz.jwtExample.controllers;
 
 import com.timtrixz.jwtExample.dtos.ApiResponseDto;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -26,7 +25,7 @@ public class TestController {
                         .build());
     }
 
-    //    Only users with 'ROLE_ADMIN' role can access this end point'
+    //    Only users with 'ROLE_ADMIN' role can access this end points'
     @GetMapping("/admin")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ApiResponseDto<?>> AdminDashboard() {
@@ -38,7 +37,7 @@ public class TestController {
                         .build());
     }
 
-    //    Only users with 'ROLE_SUPER_ADMIN' role can access this end point'
+    //    Only users with 'ROLE_SUPER_ADMIN' role can access this end points'
     @GetMapping("/superAdmin")
     @PreAuthorize("hasRole('ROLE_SUPER_ADMIN')")
     public ResponseEntity<ApiResponseDto<?>> SuperAdminDashboard() {
@@ -50,7 +49,7 @@ public class TestController {
                         .build());
     }
 
-    //    Users with 'ROLE_SUPER_ADMIN' or 'ROLE_ADMIN' roles can access this end point'
+    //    Users with 'ROLE_SUPER_ADMIN' or 'ROLE_ADMIN' roles can access this end points'
     @GetMapping("/AdminOrSuperAdmin")
     @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     public ResponseEntity<ApiResponseDto<?>> AdminOrSuperAdminContent() {
